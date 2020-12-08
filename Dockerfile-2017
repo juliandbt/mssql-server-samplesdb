@@ -72,8 +72,7 @@ WORKDIR /usr/config/
 COPY setup.* ./
 COPY entrypoint.sh ./
 
-# Since SQL Server 2019 is non-root container, we need to force this to install packages
-#USER root
+USER root
 RUN chown -R 10001:0 setup.sh
 RUN chown -R 10001:0 entrypoint.sh
 # Get to the default user
